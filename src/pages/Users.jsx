@@ -1,13 +1,13 @@
 import React from 'react';
 import users from "../json/users.json";
-import Navbar from '../components/Navbar';
+import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 
 const Users = () => {
   return (
     <>
-        <Navbar />
-        
+        <NavBar />
+
             <section>
                 {users && users.map((user, index) => (
                     <section className='user' key={index}>

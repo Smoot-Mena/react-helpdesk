@@ -1,18 +1,20 @@
 import React from 'react';
-import Button from "react-bootstrap/Button"
+import Button from "react-bootstrap/Button";
 import useUserInfo from '../zustand/useUserInfo';
 import { useNavigate } from 'react-router-dom';
 
 const Logout = () => {
-    const { userEmail, setUserEmail, userPassword, setUserPassword } = useUserInfo();
+    const { setUserEmail, setUserPassword } = useUserInfo();
     const navigate = useNavigate();
+    const cachedEmail = localStorage.getItem("login-email");
 
     const handleLogout = () => {
-        if (userEmail && userPassword) {
-            setUserEmail("");
-            setUserPassword("");
-            navigate("/login");
-        }
+        if (cachedEmail) {
+          setUserEmail("");
+          setUserPassword("");
+          localStorage.removeItem("login-email");
+          navigate("/login");
+        } 
     };
 
   return (

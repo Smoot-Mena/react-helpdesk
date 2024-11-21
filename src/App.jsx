@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import Login from './pages/Login';
-import useUserInfo from './zustand/useUserInfo';
+// import useUserInfo from './zustand/useUserInfo';
 
 import Home from './pages/Home';
 import Tickets from './pages/Tickets';
@@ -16,12 +16,13 @@ import Admins from "./pages/Admins";
 
 function App() {
 
-  const { userEmail, userPassword } = useUserInfo();
+  // const { userEmail } = useUserInfo();
+  // const cachedEmail = localStorage.getItem("login-email");
 
   return (
     <section id='app'>
       <Routes>
-        <Route path="/" element={userEmail && userPassword ? <Home /> : <Navigate to={"/login"} />}/>
+        <Route path="/" element={<Home />}/>
         <Route path="/admins" element={<Admins />}/>
         <Route path="/login" element={<Login />}/>
         <Route path='/tickets' element={<Tickets />} />

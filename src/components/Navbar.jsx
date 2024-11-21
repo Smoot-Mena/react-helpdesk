@@ -1,46 +1,33 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Logout from './Logout';
 
 import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import Stack from 'react-bootstrap/Stack';
+import Container from 'react-bootstrap/Container';
 
-const Navbar = () => {
+const NavBar = () => {
+
   return (
-    <>
-      <Nav variant='pills' fill defaultActiveKey={"/home"}>
-        <Nav.Item>
-          <Nav.Link href='/'>Home</Nav.Link>
-        </Nav.Item>
-
-        <Nav.Item>
-          <Nav.Link href='/tickets'>Tickets</Nav.Link>
-        </Nav.Item>
-
-        <Nav.Item>
-          <Nav.Link href='/users'>Users</Nav.Link>
-        </Nav.Item>
-
-        <Nav.Item>
-          <Nav.Link href='/admins'>Admins</Nav.Link>
-        </Nav.Item>
-
-        <Nav.Item>
-          <Nav.Link href='/faq'>FAQ</Nav.Link>
-        </Nav.Item>
-
-        <Nav.Item>
-          <Nav.Link>
+    <Navbar expand="lg" bg='primary' data-bs-theme="dark" fixed='top'>
+      <Container>
+        <Navbar.Brand href= "/">Home</Navbar.Brand>
+        <Nav className='ms-auto'>
+          <Stack direction='horizontal' gap={3}>
+            <Nav.Link href='/tickets'>Tickets</Nav.Link>
+            <Nav.Link href='/users'>Users</Nav.Link>
+            <Nav.Link href='/admins'>Admins</Nav.Link>
+            <Nav.Link href='/faq'>FAQ</Nav.Link>
             <Logout />
-          </Nav.Link>
-        </Nav.Item>
-
-      </Nav>
-    </>
+          </Stack>
+        </Nav>
+      </Container>
+    </Navbar>
   )
 }
 
-export default Navbar;
+export default NavBar;
 
 {/* <nav>
 <Stack direction='horizontal' gap={5}>

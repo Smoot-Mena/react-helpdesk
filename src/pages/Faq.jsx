@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 
 const Faq = () => {
   return (
     <section>
-      <Navbar />
+      <NavBar />
       Faq
       <Footer />
     </section>
