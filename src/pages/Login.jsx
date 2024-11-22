@@ -36,11 +36,12 @@ const Login = () => {
       </Row>
 
       <Form onSubmit={handleSubmit} name='login'>
-        <Form.Group className='mb-3 mx-3 mt-5' controlId='email'>
+        <Form.Group className='mb-3 mx-3 mt-5 mw-vw-50' controlId='email'>
             <Form.Label>Email Address: </Form.Label>
             <Form.Control type='email'
             onChange={(event) => setUserEmail(event.target.value)}
-            required/>
+            required
+            className='text-bg-secondary'/>
             <Form.Text className='text-muted'>Enter your email address above</Form.Text>
         </Form.Group>
 
@@ -49,7 +50,8 @@ const Login = () => {
             <Form.Control 
             type='password' 
             minLength={6} onChange={(event) => setUserPassword(event.target.value)}
-            required/>
+            required
+            className='text-bg-secondary'/>
             <Form.Text>Type in your password above</Form.Text>
           </Form.Group>
 
