@@ -24,7 +24,9 @@ const Users = () => {
                             <code style={{color: "dodgerblue"}}>{user.email}</code>
                         </p>
                         <section>
-                            <p>Employee status is..?</p>
+                            <p>
+                                <em>Employee status is..?</em>
+                            </p>
                             <Form>
                                 <Form.Group className='d-flex justify-content-evenly'>
                                     <Form.Check name='employee-status' type='radio' label="Active" isValid/>

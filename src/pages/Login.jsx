@@ -41,7 +41,7 @@ const Login = () => {
             <Form.Control type='email'
             onChange={(event) => setUserEmail(event.target.value)}
             required
-            className='text-bg-secondary'/>
+            className='bg-primary-subtle'/>
             <Form.Text className='text-muted'>Enter your email address above</Form.Text>
         </Form.Group>
 
@@ -51,7 +51,7 @@ const Login = () => {
             type='password' 
             minLength={6} onChange={(event) => setUserPassword(event.target.value)}
             required
-            className='text-bg-secondary'/>
+            className='bg-primary-subtle'/>
             <Form.Text>Type in your password above</Form.Text>
           </Form.Group>
 
