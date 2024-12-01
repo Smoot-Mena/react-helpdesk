@@ -15,16 +15,6 @@ const Ticket = ( {ticket} ) => {
 
   ticket = details.state.ticket;
 
-  // console.log(ticket);
-
-  const capitalize = (str) => {
-  
-    return str.toLowerCase()
-    .split(" ")
-    .map(word => word.replace(word.charAt(0), word.charAt(0).toUpperCase()))
-    .join(" ");
-  }
-
   return (
     <section>
       <NavBar />
