@@ -16,7 +16,7 @@ const Tickets = () => {
         bordered 
         hover
         // className='mt-5'
-        style={{width: "80vw", margin: "11vh auto"}}>
+        style={{width: "80vw", margin: "12vh auto"}}>
             <thead>
               <tr>
                 <th>Ticket Number</th>
@@ -26,6 +26,7 @@ const Tickets = () => {
                 <th>Priority</th>
                 <th>Status</th>
                 <th>Date Opened</th>
+                <th>Date Closed</th>
               </tr>
             </thead>
             <tbody>
@@ -44,6 +45,7 @@ const Tickets = () => {
                   <td>{ticket.priority}</td>
                   <td>{ticket.status}</td>
                   <td>{ticket.dateOpened}</td>
+                  <td>{ticket.status === "closed" ? ticket.dateOpened : "N/A"}</td>
                 </tr>
               ))}
             </tbody>
