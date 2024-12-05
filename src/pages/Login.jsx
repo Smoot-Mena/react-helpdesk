@@ -1,7 +1,7 @@
 import React from 'react';
-// import useLogin from '../hooks/useLogin';
 import { useNavigate } from 'react-router-dom';
-import useUserInfo from '../zustand/useUserInfo';
+import { useContext } from 'react';
+import UserContext from '../context/UserContext';
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -11,15 +11,18 @@ import Button from "react-bootstrap/Button";
 
 const Login = () => {
 
-    // const { login } = useLogin();
-    const { userEmail, setUserEmail, setUserPassword } = useUserInfo();
+    const { userEmail, setUserEmail, userPassword, setUserPassword } = useContext(UserContext);
     const navigate = useNavigate();
     const header = "React Helpdesk";
   
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+
+      name === "userEmail" ? setUserEmail(value) : setUserPassword(value);
+    };
   
     const handleSubmit = (event) => {
       event.preventDefault();
-    //   login(email, password);
       localStorage.setItem("login-email", userEmail);
       navigate("/");
     }
@@ -39,7 +42,9 @@ const Login = () => {
         <Form.Group className='mb-3 mx-3 mt-5 mw-vw-50' controlId='email'>
             <Form.Label>Email Address: </Form.Label>
             <Form.Control type='email'
-            onChange={(event) => setUserEmail(event.target.value)}
+            name='userEmail'
+            value={userEmail}
+            onChange={handleChange}
             required
             className='bg-primary-subtle'/>
             <Form.Text className='text-muted'>Enter your email address above</Form.Text>
@@ -48,14 +53,17 @@ const Login = () => {
           <Form.Group className='mb-4 mx-3' controlId='password'>
             <Form.Label>Password: </Form.Label>
             <Form.Control 
-            type='password' 
-            minLength={6} onChange={(event) => setUserPassword(event.target.value)}
+            type='password'
+            name='userPassword'
+            value={userPassword} 
+            minLength={6} onChange={handleChange}
             required
             className='bg-primary-subtle'/>
             <Form.Text>Type in your password above</Form.Text>
           </Form.Group>
 
-          <Button className='mx-3' type='submit'>
+          <Button type='submit'
+          style={{margin: "0 35vw 10vh"}}>
             Login
           </Button>
       </Form>

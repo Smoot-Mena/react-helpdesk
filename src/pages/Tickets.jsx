@@ -14,6 +14,7 @@ import defaultTickets from "../json/tickets.json";
 import useCapitalize from '../hooks/useCapitalize';
 
 const Tickets = () => {
+  /**Variables**/
   const [tickets, setTickets] = useState(defaultTickets);
   const [input, setInput] = useState({
     filterUser: "",
@@ -21,6 +22,7 @@ const Tickets = () => {
   });
   const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
 
+  /**Functions**/
   // Filters tickets based on input
   const filteredTickets = useMemo(() => {
     return tickets.filter((ticket) => {
@@ -57,10 +59,11 @@ const Tickets = () => {
   };
 
   return (
-    <section id='ticket-page'>
+    <article id='ticket-page'>
         <NavBar />
 
         <Form style={{margin: "20vh 2vw 5vh"}}>
+
           <Row className='mb-4'>
             <Form.Group as={Col}>
               <Form.Label>Filter By User: </Form.Label>
@@ -71,10 +74,9 @@ const Tickets = () => {
               <Form.Label>Filter By Subject: </Form.Label>
               <Form.Control type='text' value={input.filterSubject} name='filterSubject' onChange={handleChange}/>
             </Form.Group>
-
           </Row>
 
-          <Row>
+          <Row className='mb-4'>
             <Stack direction='horizontal' gap={3}>
               <label>Sort By: </label>
               <Button variant='outline-primary' onClick={() => handleSort("ticketNumber")}>Ticket #</Button>
@@ -82,8 +84,12 @@ const Tickets = () => {
               <Button variant='outline-primary' onClick={() => handleSort("priority")}>Priority</Button>
               <Button variant='outline-primary' onClick={() => handleSort("status")}>Status</Button>
             </Stack>
-
           </Row>
+
+          <Row className='me-1'>
+            <Button className='ms-auto' style={{width: "max-content"}}>Create New Ticket</Button>
+          </Row>
+
         </Form>
 
         <Table id='ticket-list' responsive="sm"
@@ -111,9 +117,7 @@ const Tickets = () => {
                     state={ {ticket: ticket} }
                     to={`/tickets/${ticket.ticketNumber}`}>{ticket.ticketNumber}</Link>
                   </td>
-                  <td>
-                    <Link>{ticket.user}</Link>
-                  </td>
+                  <td>{ticket.user}</td>
                   <td>{ticket.contact}</td>
                   <td>{ticket.subject}</td>
                   <td>{ticket.priority}</td>
@@ -125,7 +129,7 @@ const Tickets = () => {
             </tbody>
           </Table>
           <Footer />
-    </section>
+    </article>
   )
 }
 

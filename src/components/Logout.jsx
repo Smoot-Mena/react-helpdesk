@@ -1,10 +1,13 @@
 import React from 'react';
 import Button from "react-bootstrap/Button";
-import useUserInfo from '../zustand/useUserInfo';
+
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import UserContext from '../context/UserContext';
 
 const Logout = () => {
-    const { setUserEmail, setUserPassword } = useUserInfo();
+
+    const { setUserEmail, setUserPassword } = useContext(UserContext);
     const navigate = useNavigate();
     const cachedEmail = localStorage.getItem("login-email");
 
@@ -18,7 +21,6 @@ const Logout = () => {
     };
 
   return (
-    // <button type='button' className='btn btn-danger' onClick={handleLogout}>Logout</button>
     <Button type='button' variant='danger' onClick={handleLogout}>Logout</Button>
   )
 }

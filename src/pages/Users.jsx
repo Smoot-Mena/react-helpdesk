@@ -11,12 +11,14 @@ const Users = () => {
     <>
         <NavBar />
 
-            <Stack gap={3} className='user-list w-auto mt-5 pt-5 mx-4 px-4'>
+            <Stack gap={3} className='user-list w-auto px-4'
+            style={{margin: "15vh auto"}}>
                 {users && users.map((user, index) => (
                     <Stack 
                     className='user' 
                     key={index}
-                    style={{borderBottom: "2px solid dodgerblue", margin: "0 auto"}}>
+                    style={{borderBottom: "2px solid dodgerblue", 
+                    margin: "0 auto", padding: "1vh"}}>
                         <p style={{textAlign: "center"}}>
                             <strong>{user.name}</strong>
                         </p>
