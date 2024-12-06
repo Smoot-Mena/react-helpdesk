@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import NavBar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
@@ -10,12 +11,11 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
 
-import defaultTickets from "../json/tickets.json";
 import useCapitalize from '../hooks/useCapitalize';
 
 const Tickets = () => {
   /**Variables**/
-  const [tickets, setTickets] = useState(defaultTickets);
+  const tickets = useSelector((state) => state.tickets);
   const [input, setInput] = useState({
     filterUser: "",
     filterSubject: ""
