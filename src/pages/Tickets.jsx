@@ -15,11 +15,12 @@ import useCapitalize from '../hooks/useCapitalize';
 
 const Tickets = () => {
   /**Variables**/
-  const tickets = useSelector((state) => state.tickets);
+  const [tickets, setTickets] = useState(useSelector((state) => state.tickets));
   const [input, setInput] = useState({
     filterUser: "",
     filterSubject: ""
   });
+
   const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
 
   /**Functions**/
@@ -54,6 +55,7 @@ const Tickets = () => {
       return 0;
     });
 
+    // setDisplayTickets(sortedTickets);
     setTickets(sortedTickets);
     setSortConfig({ key, direction });
   };
@@ -115,7 +117,7 @@ const Tickets = () => {
                   <td>
                     <Link
                     state={ {ticket: ticket} }
-                    to={`/tickets/${ticket.ticketNumber}`}>{ticket.ticketNumber}</Link>
+                    to={`/tickets/edit-ticket/${ticket.ticketNumber}`}>{ticket.ticketNumber}</Link>
                   </td>
                   <td>{ticket.user}</td>
                   <td>{ticket.contact}</td>

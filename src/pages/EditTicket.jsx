@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 
 import { IoReturnDownBack } from "react-icons/io5";
 
-const Ticket = ( {ticket} ) => {
+const EditTicket = ( {ticket} ) => {
   const details = useLocation();
   const navigate = useNavigate();
 
@@ -126,4 +126,4 @@ const Ticket = ( {ticket} ) => {
   )
 }
 
-export default Ticket;
+export default EditTicket;
