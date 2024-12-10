@@ -36,7 +36,7 @@ const EditTicket = ( {ticket} ) => {
           </Form.Group>
 
           <Button  
-          variant='danger'
+          variant='outline-danger'
           style={{width: "75px", height: "40px", alignSelf: "end", margin: "0 1vw"}}
           onClick={() => {navigate("/tickets")}}>
             <IoReturnDownBack style={{width: "25px", height: "25px"}} />
