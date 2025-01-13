@@ -17,12 +17,11 @@ import { UserProvider } from './context/UserContext';
 
 function App() {
 
-
   return (
     <UserProvider>
       <main id='app'>
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={localStorage ? <Home /> : <Login />}/>
           <Route path="/admins" element={<Admins />}/>
           <Route path="/login" element={<Login />}/>
           <Route path='/tickets' element={<Tickets />} />

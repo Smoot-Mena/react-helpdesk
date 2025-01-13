@@ -16,8 +16,9 @@ const Logout = () => {
           setUserEmail("");
           setUserPassword("");
           localStorage.removeItem("login-email");
-          navigate("/login");
-        } 
+        }
+
+        navigate("/login");
     };
 
   return (
