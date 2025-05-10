@@ -15,10 +15,10 @@ const NavBar = () => {
         <Navbar.Brand href= "/">Home</Navbar.Brand>
         <Nav className='ms-auto'>
           <Stack direction='horizontal' gap={3}>
-            <Nav.Link href='/tickets'>Tickets</Nav.Link>
-            <Nav.Link href='/users'>Users</Nav.Link>
-            <Nav.Link href='/admins'>Admins</Nav.Link>
-            <Nav.Link href='/faq'>FAQ</Nav.Link>
+            <Link style={{TextDecoration: "none"}} to={"/tickets"}>Tickets</Link>
+            <Link to={"/users"}>Users</Link>
+            <Link to={"/admins"}>Admins</Link>
+            <Link to={"/faq"}>FAQ</Link>
             <Logout />
           </Stack>
         </Nav>
