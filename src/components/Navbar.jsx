@@ -15,7 +15,7 @@ const NavBar = () => {
         <Link href= "/">Home</Link>
         <Nav className='ms-auto'>
           <Stack direction='horizontal' gap={3}>
-            <Nav.Link href='/tickets'>Tickets</Nav.Link>
+            <Link href='/tickets'>Tickets</Link>
             <Nav.Link href='/users'>Users</Nav.Link>
             <Nav.Link href='/admins'>Admins</Nav.Link>
             <Nav.Link href='/faq'>FAQ</Nav.Link>
