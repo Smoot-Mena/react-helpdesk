@@ -39,7 +39,7 @@ const Login = () => {
       </Row>
 
       <Form onSubmit={handleSubmit} name='login'>
-        <Form.Group className='mb-3 mx-3 mt-5 mw-vw-50' controlId='email'>
+        <Form.Group className='mb-3 mx-3 mt-5 mw-vw-30' controlId='email'>
             <Form.Label>Email Address: </Form.Label>
             <Form.Control type='email'
             name='userEmail'
@@ -73,19 +73,3 @@ const Login = () => {
 }
 
 export default Login;
-
-{/* <section id='login-window'>
-<header>React Helpdesk
-    <span> Login</span>
-</header>
-
-<form onSubmit={handleSubmit} name='login'>
-    <label name="login-email">Email: </label>
-    <input type="email" required onChange={(event) => setUserEmail(event.target.value)} />
-
-    <label name="password">Password: </label>
-    <input type="text" minLength={6} required onChange={(event) => setUserPassword(event.target.value)} />
-
-    <button type='submit'>Login</button>
-</form>
-</section> */}
