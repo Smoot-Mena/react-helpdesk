@@ -12,10 +12,10 @@ const NavBar = () => {
   return (
     <Navbar expand="lg" bg='primary' data-bs-theme="dark" fixed='top'>
       <Container>
-        <Link href= "/">Home</Link>
+        <Navbar.Brand href= "/">Home</Navbar.Brand>
         <Nav className='ms-auto'>
           <Stack direction='horizontal' gap={3}>
-            <Link href='/tickets'>Tickets</Link>
+            <Nav.Link href='/tickets'>Tickets</Nav.Link>
             <Nav.Link href='/users'>Users</Nav.Link>
             <Nav.Link href='/admins'>Admins</Nav.Link>
             <Nav.Link href='/faq'>FAQ</Nav.Link>

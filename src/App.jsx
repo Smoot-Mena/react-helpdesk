@@ -25,7 +25,7 @@ function App() {
           <Route path="/admins" element={<Admins />}/>
           <Route path="/login" element={<Login />}/>
           <Route path='/tickets' element={<Tickets />} />
-          <Route path='tickets/create-ticket' element={<CreateTicket />} />
+          <Route path='/tickets/create-ticket' element={<CreateTicket />} />
           <Route path='/tickets/edit-ticket/:id' element={<EditTicket />} />
           <Route path='/users' element={<Users />} />
           <Route path='/users/add-user' element={<AddUsers />} />
