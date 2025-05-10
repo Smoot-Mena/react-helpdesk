@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logout from './Logout';
 
 import Nav from "react-bootstrap/Nav";
@@ -12,7 +12,7 @@ const NavBar = () => {
   return (
     <Navbar expand="lg" bg='primary' data-bs-theme="dark" fixed='top'>
       <Container>
-        <Navbar.Brand href= "/">Home</Navbar.Brand>
+        <Link href= "/">Home</Link>
         <Nav className='ms-auto'>
           <Stack direction='horizontal' gap={3}>
             <Nav.Link href='/tickets'>Tickets</Nav.Link>
