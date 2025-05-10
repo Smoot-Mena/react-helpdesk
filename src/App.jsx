@@ -21,7 +21,7 @@ function App() {
     <UserProvider>
       <main id='app'>
         <Routes>
-          <Route path="/" element={!localStorage ? <Home /> : <Login />}/>
+          <Route path="/" element={localStorage ? <Home /> : <Login />}/>
           <Route path="/admins" element={<Admins />}/>
           <Route path="/login" element={<Login />}/>
           <Route path='/tickets' element={<Tickets />} />
