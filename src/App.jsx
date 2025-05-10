@@ -20,9 +20,10 @@ function App() {
     <UserProvider>
       <main id='app'>
         <Routes>
-          <Route path="/" element={localStorage ? <Home /> : <Login />}/>
+          {/* <Route path="/" element={localStorage ? <Home /> : <Login />}/> */}
+          <Route path="/" element={<Login />} />
           <Route path="/admins" element={<Admins />}/>
-          <Route path="/login" element={<Login />}/>
+          <Route path="/login" element={<Home />}/>
           <Route path='/tickets' element={<Tickets />} />
           <Route path='/tickets/create-ticket' element={<CreateTicket />} />
           <Route path='/tickets/edit-ticket/:id' element={<EditTicket />} />
