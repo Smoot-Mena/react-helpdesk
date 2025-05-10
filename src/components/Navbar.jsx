@@ -15,7 +15,7 @@ const NavBar = () => {
         <Navbar.Brand href= "/">Home</Navbar.Brand>
         <Nav className='ms-auto'>
           <Stack direction='horizontal' gap={3}>
-            <Link style={{TextDecoration: "none"}} to={"/tickets"}>Tickets</Link>
+            <Link to={"/tickets"}>Tickets</Link>
             <Link to={"/users"}>Users</Link>
             <Link to={"/admins"}>Admins</Link>
             <Link to={"/faq"}>FAQ</Link>
@@ -28,38 +28,3 @@ const NavBar = () => {
 }
 
 export default NavBar;
-
-{/* <nav>
-<Stack direction='horizontal' gap={5}>
-<Link to={"/"}>Home</Link>
-  <Stack direction='horizontal' gap={5}>
-    <Link to={"/tickets"}>Tickets</Link>
-    <Link to={"/users"}>Users</Link>
-    <Link to={"/admins"}>Admins</Link>
-    <Link to={"/faq"}>FAQ</Link>
-  </Stack>
-  <Logout />
-</Stack>
-</nav> 
-
-        <Nav.Item>
-          <Nav as={"ul"}>
-            <Nav.Item as={"li"}>
-              <Nav.Link href='/tickets'>Tickets</Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item as={"li"}>
-              <Nav.Link href='/users'>Users</Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item as={"li"}>
-              <Nav.Link href='/admins'>Admins</Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item as={"li"}>
-              <Nav.Link href='/faq'>FAQ</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Nav.Item>
-
-*/}
