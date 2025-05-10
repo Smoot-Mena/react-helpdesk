@@ -39,7 +39,7 @@ const Login = () => {
       </Row>
 
       <Form onSubmit={handleSubmit} name='login'>
-        <Form.Group className='mb-3 mx-3 mt-5 mw-vw-30' controlId='email'>
+        <Form.Group className='mb-3 mx-3 mt-5' style={{outerWidth: "10vw"}} controlId='email'>
             <Form.Label>Email Address: </Form.Label>
             <Form.Control type='email'
             name='userEmail'
