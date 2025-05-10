@@ -16,7 +16,6 @@ const Users = () => {
   return (
     <>
         <NavBar />
-
             <Stack gap={3} className='user-list w-auto px-4'
             style={{margin: "15vh auto"}}>
                 {users && users.map((user, index) => (
