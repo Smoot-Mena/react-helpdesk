@@ -24,7 +24,7 @@ const Login = () => {
     const handleSubmit = (event) => {
       event.preventDefault();
       localStorage.setItem("login-email", userEmail);
-      navigate("/");
+      navigate("/login");
     }
 
   return (

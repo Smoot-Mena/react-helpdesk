@@ -18,7 +18,7 @@ const Logout = () => {
           localStorage.removeItem("login-email");
         }
 
-        navigate("/login");
+        navigate("/");
     };
 
   return (
